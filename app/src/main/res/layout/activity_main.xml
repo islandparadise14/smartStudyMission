@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.smartstudy.MainViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/bm_hanna_air"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.074" />
+
+        <LinearLayout
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <EditText
+                android:id="@+id/startHour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="00"
+                android:inputType="number"
+                android:maxLength="2"
+                android:fontFamily="@font/bm_hanna_air"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@{viewModel.mStartHourString}"
+                android:textSize="80sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/split"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:fontFamily="@font/bm_hanna_air"
+                android:textSize="60sp" />
+
+            <EditText
+                android:id="@+id/startMinute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="00"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="number"
+                android:maxLength="2"
+                android:fontFamily="@font/bm_hanna_air"
+                android:text="@{viewModel.mStartMinuteString}"
+                android:textSize="80sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/bm_hanna_air"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/start"
+            app:layout_constraintVertical_bias="0.223" />
+
+        <LinearLayout
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="30"
+            app:layout_constraintBottom_toBottomOf="@id/start"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.755"
+            tools:layout_editor_absoluteX="0dp">
+
+            <EditText
+                android:id="@+id/endHour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="00"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="number"
+                android:maxLength="2"
+                android:fontFamily="@font/bm_hanna_air"
+                android:text="@{viewModel.mEndHourString}"
+                android:textSize="80sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/bm_hanna_air"
+                android:text="@string/split"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="60sp" />
+
+            <EditText
+                android:id="@+id/endMinute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:fontFamily="@font/bm_hanna_air"
+                android:hint="00"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="number"
+                android:maxLength="2"
+                android:text="@{viewModel.mEndMinuteString}"
+                android:textSize="80sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/now"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/bm_hanna_air"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/end"
+            app:layout_constraintVertical_bias="0.293" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/end"
+            app:layout_constraintVertical_bias="0.217"
+            tools:layout_editor_absoluteX="0dp">
+
+            <EditText
+                android:id="@+id/nowHour"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="00"
+                android:fontFamily="@font/bm_hanna_air"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="number"
+                android:maxLength="2"
+                android:text="@{viewModel.mNowHourString}"
+                android:textSize="80sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/split"
+                android:fontFamily="@font/bm_hanna_air"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="60sp" />
+
+            <EditText
+                android:id="@+id/nowMinute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:fontFamily="@font/bm_hanna_air"
+                android:hint="00"
+                android:textColor="@color/colorPrimaryDark"
+                android:inputType="number"
+                android:maxLength="2"
+                android:text="@{viewModel.mNowMinuteString}"
+                android:textSize="80sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

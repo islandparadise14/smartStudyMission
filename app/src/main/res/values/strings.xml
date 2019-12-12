@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">smartstudy</string>
+    <string name="start">시작 시간</string>
+    <string name="end">종료 시간</string>
+    <string name="now">현재 시간</string>
+    <string name="split">:</string>
+</resources>
